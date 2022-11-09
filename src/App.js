@@ -123,7 +123,7 @@ const App = () => {
         <button className="button" onClick={handleClick}>
           ^
         </button>
-        <button className="button" onClick={handleClick}>
+        <button className="ac" onClick={handleClick}>
           AC
         </button>
         <button className="number" onClick={handleClick}>
