@@ -112,7 +112,8 @@ const App = () => {
 
   return (
     <main className="App">
-      <input type="text" value={display}></input>
+      <div className="calculator-container">
+        <input type="text" value={display}></input>
       <section className="button-container">
         <button className="button" onClick={handleClick}>
           (
@@ -175,6 +176,7 @@ const App = () => {
           +
         </button>
       </section>
+      </div>
     </main>
   );
 }
