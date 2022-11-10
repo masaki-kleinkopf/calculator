@@ -1,43 +1,46 @@
 .App {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-weight: 800;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 800;
 }
 
 .calculator-container {
-    display: flex;
-    flex-direction: column;
-    align-items:center;
-    background-color: #dcdcdc;
-    input {
-            width: 23em;
-            height: 2em;
-            margin-top: 1em;
-        }
-    border-radius: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  background-color: #dcdcdc;
+  input {
+    font-family: 'Orbitron', sans-serif;
+    width: 23em;
+    height: 2em;
+    margin-top: 1em;
+    }
+  border-radius: 2%;
 }
 
 .button-container {
-    display: grid;
-    grid-template-columns: 5em 5em 5em 5em;
-    grid-template-rows: 4em 4em 4em 4em 4em;
-    column-gap: 1em;
-    row-gap: 1em;
-    padding:1em;
-    background-color: #dcdcdc;
-    button{
-        border:none;
-        border-radius: 4%;
-    }
-    button:hover {
-       border: solid;
-    }
+  display: grid;
+  grid-template-columns: 5em 5em 5em 5em;
+  grid-template-rows: 4em 4em 4em 4em 4em;
+  column-gap: 1em;
+  row-gap: 1em;
+  padding:1em;
+  background-color: #dcdcdc;
+  button{
+    border:none;
+    border-radius: 4%;
+    font-family:'Orbitron', sans-serif;
+    font-size: x-large;
+  }
+  button:hover {
+      border: solid;
+  }
 }
 
 .ac {
-    background-color: #ff8c00;
+  background-color: #ff8c00;
 }
 .number {
-    background-color: #f8f8ff;
+  background-color: #f8f8ff;
 }
