@@ -3,21 +3,27 @@ import './App.scss';
 
 const App = () => {
   const [display, setDisplay] = useState("");
+  const [error, setError] = useState("")
   
   const handleClick = (event) => {
     if (event.target.innerHTML === "AC") {
       setDisplay("");
+      setError("")
     } else {
       setDisplay(display + event.target.innerHTML);
     }
   };
 
-  const convertToTokens = (code) => {
+  const handleEqualsClick = () => {
+    setDisplay(evaluateAsFloat(display))
+  }
+
+  const convertToTokens = (input) => {
     let results = [];
     let tokenRegExp = /\s*([A-Za-z]+|[0-9]+|\S)\s*/g;
 
     let matchArray;
-    while ((matchArray = tokenRegExp.exec(code)) !== null)
+    while ((matchArray = tokenRegExp.exec(input)) !== null)
         results.push(matchArray[1]);
     return results;
   } 
@@ -26,8 +32,8 @@ const App = () => {
       return token !== undefined && token.match(/^[0-9]+$/) !== null;
   }
 
-  const parse = (code) => {
-    let tokens = convertToTokens(code);
+  const parse = (input) => {
+    let tokens = convertToTokens(input);
     let position = 0;
       function peekAtNextToken() {
           return tokens[position];
@@ -48,7 +54,7 @@ const App = () => {
               advanceToken();
               return expr;
           } else {
-              throw new SyntaxError("expected a different input");
+              setError("Expected a different input, please try again");
           }
       }
 
@@ -106,12 +112,9 @@ const App = () => {
   return evaluate(parse(code));
   }
 
-  const handleEqualsClick = () => {
-    setDisplay(evaluateAsFloat(display))
-  }
-
   return (
     <main className="App">
+      {error && <h1>{error}</h1>}
       <div className="calculator-container">
         <input type="text" value={display}></input>
       <section className="button-container">
