@@ -1,5 +1,5 @@
 # Calculator App
-deployed [https://calculator-ruby-beta.vercel.app/]
+deployed => https://calculator-ruby-beta.vercel.app/]
 
 Calculator take-home assignment in built in React. 
 
