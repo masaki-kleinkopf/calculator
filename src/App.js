@@ -9,14 +9,12 @@ const App = () => {
     if (event.target.innerHTML === "AC") {
       setDisplay("");
       setError("")
+    } else if (event.target.innerHTML === "=") {
+      setDisplay(evaluateAsFloat(display))
     } else {
       setDisplay(display + event.target.innerHTML);
     }
   };
-
-  const handleEqualsClick = () => {
-    setDisplay(evaluateAsFloat(display))
-  }
 
   const convertToTokens = (input) => {
     let results = [];
@@ -172,7 +170,7 @@ const App = () => {
         <button className="number" onClick={handleClick}>
           .
         </button>
-        <button className="equal" onClick={handleEqualsClick}>
+        <button className="equal" onClick={handleClick}>
           =
         </button>
         <button className="operation" onClick={handleClick}>
